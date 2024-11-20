@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply min-h-screen;
+  }
+  
+  body {
+    @apply text-white bg-gray-900 transition-colors duration-300;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+
+  .aspect-w-16 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: rgb(37 99 235);
+  --rdp-background-color: rgb(37 99 235 / 0.1);
+  --rdp-accent-color-dark: rgb(37 99 235);
+  --rdp-background-color-dark: rgb(37 99 235 / 0.2);
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+  margin: 0;
+}
+
+.rdp-day_selected:not([disabled]) { 
+  color: white;
+  background-color: var(--rdp-accent-color);
+}
+
+.rdp-day_selected:hover:not([disabled]) {
+  background-color: var(--rdp-accent-color-dark);
+}
